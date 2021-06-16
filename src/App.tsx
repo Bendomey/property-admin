@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Toaster } from "react-hot-toast";
+import AppNavigation from "./navigation/router-config";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <AppNavigation />
+    <Toaster
+      position={"bottom-right"}
+      reverseOrder={false}
+      toastOptions={{
+        // Define default options
+
+        className: "",
+        style: {
+          margin: "40px",
+          background: "#363636",
+          // background: "#00e676",
+          color: "#fff",
+          zIndex: 1,
+          // width: "28vh",
+        },
+        duration: 5000,
+        // Default options for specific types
+        success: {
+          duration: 8000,
+          theme: {
+            primary: "#1F3A8A",
+            secondary: "black",
+          },
+        },
+        error: {
+          style: {
+            background: "#ffa726",
+          },
+          duration: 8000,
+        },
+      }}
+    />
+  </>
+);
 
 export default App;

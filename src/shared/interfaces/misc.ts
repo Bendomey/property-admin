@@ -6,3 +6,9 @@ export interface RouteProp {
   exact: boolean;
   path: string;
 }
+
+export interface BreadCrumbPageProp {
+  name: string;
+  href: string;
+  current: boolean;
+}

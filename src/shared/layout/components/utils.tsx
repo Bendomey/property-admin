@@ -1,53 +1,54 @@
 import {
-  CogIcon,
-  CollectionIcon,
   DocumentSearchIcon,
   ChartPieIcon,
   UserGroupIcon,
   ViewGridIcon as ViewGridIconOutline,
-  CalendarIcon,
-  ChatAlt2Icon,
-  DocumentReportIcon,
 } from "@heroicons/react/outline";
 import {
   DASHBOARD,
-  SETTINGS,
-  THEMATIC_AREAS,
-  CONTENT_MANAGEMENT,
-  NEWS_MANAGEMENT,
-  MESSAGING,
-  POLL_SETUP,
+  REQUESTS,
+  PROPERTIES,
   PUBLIC_INTERACTIONS,
-  USER_MANAGEMENT,
+  CLIENT_MANAGEMENT,
+  ADMIN_MANAGEMENT,
 } from "../../../navigation/constants";
 
 export const navigation = [
   { name: "Overview", href: DASHBOARD, icon: ChartPieIcon },
   {
-    name: "Thematic Areas",
-    href: THEMATIC_AREAS,
-    icon: ViewGridIconOutline,
-  },
-  {
-    name: "Content Management",
-    href: CONTENT_MANAGEMENT,
+    name: "Requests",
+    href: REQUESTS,
     icon: DocumentSearchIcon,
   },
-  { name: "News Management", href: NEWS_MANAGEMENT, icon: CalendarIcon },
-  { name: "Messaging", href: MESSAGING, icon: ChatAlt2Icon },
-  { name: "Poll Setup", href: POLL_SETUP, icon: DocumentReportIcon },
   {
-    name: "Public Interactions",
-    href: PUBLIC_INTERACTIONS,
-    icon: CollectionIcon,
+    name: "Properties",
+    href: PROPERTIES,
+    icon: ViewGridIconOutline,
   },
+
   {
-    name: "User Management",
-    href: USER_MANAGEMENT,
+    name: "Clients",
+    href: CLIENT_MANAGEMENT,
     icon: UserGroupIcon,
     current: true,
   },
-  { name: "Settings", href: SETTINGS, icon: CogIcon },
+  {
+    name: "Administrators",
+    href: ADMIN_MANAGEMENT,
+    icon: UserGroupIcon,
+    current: true,
+  },
+  // { name: "Settings", href: SETTINGS, icon: CogIcon },
+];
+
+export const configurations = [
+  {
+    name: "Public Interactions",
+    href: PUBLIC_INTERACTIONS,
+    bgColorClass: "bg-indigo-500",
+  },
+  // { name: "Human Resources", href: "#", bgColorClass: "bg-green-500" },
+  // { name: "Customer Success", href: "#", bgColorClass: "bg-yellow-500" },
 ];
 
 export const userNavigation = [

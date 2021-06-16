@@ -19,30 +19,26 @@ const Layout = () => {
 
   return isInRoute ? (
     <Fragment>
-      <div className="h-screen bg-gray-50 flex overflow-hidden">
+      <div className="h-screen flex overflow-hidden bg-white">
         <SideBar
           mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
         />
-        {/* Content area */}
-        <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex flex-col w-0 flex-1 overflow-hidden">
           <Header setMobileMenuOpen={setMobileMenuOpen} />
-          {/* Main content */}
-          <div className="flex-1 flex items-stretch overflow-hidden">
-            <main className="flex-1 overflow-y-auto scrollContainer">
-              <Suspense fallback={PageLoader()}>
-                {routes.map((route: RouteProp, i: number) => (
-                  <Fragment key={i}>
-                    <Route
-                      path={route.path}
-                      component={route.component as any}
-                      exact={route.exact}
-                    />
-                  </Fragment>
-                ))}
-              </Suspense>
-            </main>
-          </div>
+          <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
+            <Suspense fallback={PageLoader()}>
+              {routes.map((route: RouteProp, i: number) => (
+                <Fragment key={i}>
+                  <Route
+                    path={route.path}
+                    component={route.component as any}
+                    exact={route.exact}
+                  />
+                </Fragment>
+              ))}
+            </Suspense>
+          </main>
         </div>
       </div>
     </Fragment>
